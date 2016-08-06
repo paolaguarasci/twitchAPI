@@ -1,12 +1,12 @@
 {
-  "name": "titolo",
-  "description": "descrizione",
+  "name": "",
+  "description": "",
   "main": "index.html",
   "authors": [
     "Paola Guarasci"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/AhiVelasquez/Random-Quote-Machine",
+  "homepage": "https://github.com/AhiVelasquez/twitchAPI",
   "ignore": [
     "**/.*",
     "node_modules",
