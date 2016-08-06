@@ -4,7 +4,7 @@ var $ = require('jquery');
 //
 //
 $(document).ready( function (){
-var usersFcc = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas"];
+var usersFcc = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas", "brunofin", "comster404"];
 var twitchUsers = 'https://api.twitch.tv/kraken/users/';
 var twitchStream = 'https://api.twitch.tv/kraken/streams/';
 var html = '';
@@ -17,9 +17,13 @@ for (var i = 0; i < usersFcc.length; i++){
     url: twitchUsers + usersFcc[i],
     async: false,
     success: function (data) {
-      usersFccImg.push(data.logo);
+      if (data.logo !== null){
+        usersFccImg.push(data.logo);
+      } else {
+        usersFccImg.push("https://placehold.it/300");
       }
-    });
+    }
+  });
 }
 // Recupero i dati di streaming
 for (var i = 0; i < usersFcc.length; i++){
@@ -29,6 +33,7 @@ for (var i = 0; i < usersFcc.length; i++){
       success: function(data)
       {
         streamData = '';
+
         if (data.stream !== null) {
           streamData += data.stream.game + ': ';
           streamData += data.stream.channel.status;
@@ -46,7 +51,15 @@ for (var i = 0; i < usersFcc.length; i++){
         html += '<div class="col-md-2"><a href="https://www.twitch.tv/'+ usersFcc[i] +'">' + usersFcc[i] + '</a></div>';
         html += '<div class="col-md-8"><p>' + streamData + '</p></div>';
         html += '</div>';
-      }});// end getJSON twitchStream
+      },
+      error: function (data) {
+        html += '<div class="row utente '+ status +'">';
+        html += '<div class="col-md-2"><img src="https://placehold.it/300" /></div>';
+        html += '<div class="col-md-2">' + usersFcc[i] + '</div>';
+        html += '<div class="col-md-8"><p>Account Cancellato</p></div>';
+        html += '</div>';
+      }
+    });// end getJSON twitchStream
 
     $('.result').html(html);
     console.log(html);

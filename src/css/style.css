@@ -11,7 +11,6 @@
 
 body {
   background-color: #ECF0E7;
-  color: ;
 }
 
 .container {
@@ -19,18 +18,14 @@ body {
   max-width: 90%;
 }
 
-div.utente img{
+.utente img{
   width: 50px;
   height: 50px;
   border-radius: 50%;
   border: 2px solid #8EA7C2;
 }
-h1 {
-  text-transform: uppercase;
-  font-size: 56px;
-  color: #5C5457;
-}
-div.utente {
+
+.utente {
   vertical-align: center;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -46,14 +41,28 @@ a:visited {
   color: #B8CCA6;
 }
 
-div.online {
+.online {
   background-color: #B8CCA6;
   color: #5C5457;
 }
 
-div.online>a,
-div.online>a:hover,
-div.online>a:focus,
-div.online>a:visited {
+.online a,
+.online a:hover,
+.online a:focus,
+.online a:visited {
+  color: #4A5E82;
+}
+.title {
+  background-color: #5C5457;
+  color: #E1E1E6;
+  text-align: left;
+}
+div {
+  text-align: center;
+}
+h1 {
+  text-transform: uppercase;
+  font-size: 56px;
+  font-weight: bold;
   color: inherit;
 }
