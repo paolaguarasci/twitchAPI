@@ -1,0 +1,23 @@
+{
+  "name": "titolo",
+  "description": "descrizione",
+  "main": "index.html",
+  "authors": [
+    "Paola Guarasci"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/AhiVelasquez/Random-Quote-Machine",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0"
+  },
+  "devDependencies": {
+    "bootstrap": "4"
+  }
+}
